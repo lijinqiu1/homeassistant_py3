@@ -1,0 +1,84 @@
+<MainFloatLayout>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'data/icons/main/background.jpg'
+    #PM 2.5
+#    Image
+#        id: main_image_pm
+#        source: 'data/icons/level/good.jpg'
+#        pos_hint: {"x": 0.575, 'y': 0.86052631578947368421052631578947}
+#        size_hint: 0.07, 0.07368421052631578947368421052632
+    Label
+        id: main_label_pm
+        pos_hint: {"x": 0.55375, 'y': 0.86052631578947368421052631578947}
+        size_hint: 0.13625, 0.07631578947368421052631578947368
+        text_size: self.size
+        font_size: self.height*1
+        markup: True
+        halign: 'center'
+
+    #水质
+#    Image
+#        id: main_image_water
+#        source: 'data/icons/level/good.jpg'
+#        pos_hint: {"x": 0.575, 'y': 0.70526315789473684210526315789474}
+#        size_hint: 0.07, 0.07368421052631578947368421052632
+    Label
+        id: main_label_water
+        pos_hint: {"x": 0.55375, 'y': 0.70526315789473684210526315789474}
+        size_hint: 0.13625, 0.07631578947368421052631578947368
+        text_size: self.size
+        font_size: self.height*1
+        markup: True
+        halign: 'center'
+
+    #温度
+    Label
+        id: main_label_temperature
+        pos_hint: {"x": 0.7755, 'y':0.85052631578947368421052631578947}
+        size_hint: 0.0425, 0.07631578947368421052631578947368
+        text_size: self.size
+        font_size: self.height*1
+        markup: True
+        halign: 'right'
+    #湿度
+#    Image
+#        id: main_image_hum
+#        source: 'data/icons/level/comfortable.jpg'
+#        pos_hint: {"x": 0.78125, 'y': 0.70526315789473684210526315789474}
+#        size_hint: 0.07, 0.07368421052631578947368421052632
+
+    Label
+        id: main_label_hum
+        pos_hint: {"x": 0.7575, 'y':0.70789473684210526315789473684211}
+        size_hint: 0.1175, 0.07631578947368421052631578947368
+        text_size: self.size
+        font_size: self.height*1
+        markup: True
+        halign: 'center'
+
+    #信号
+    Image
+        source: 'data/icons/singal/4.jpg'
+        pos_hint: {"x": .91375, 'y': .860526}
+        size_hint: 0.04625, 0.089474
+    Button:
+        size_hint: 0.17625, 0.371
+        pos_hint: {"x": .12375, 'y': .16842}
+        background_normal:  "data/icons/main/easy.jpg"
+        background_down:    "data/icons/main/easy.jpg"
+        on_release: app.on_easy_screen()
+    Button:
+        size_hint: 0.17625, 0.371
+        pos_hint: {"x": .41125, 'y': .16842}
+        background_normal:  "data/icons/main/profession.jpg"
+        background_down:    "data/icons/main/profession.jpg"
+        on_release: app.on_profession_screen()
+    Button:
+        size_hint: 0.17625, 0.371
+        pos_hint: {"x": .69875, 'y': .16842}
+        background_normal:  "data/icons/main/setting.jpg"
+        background_down:    "data/icons/main/setting.jpg"
+        on_release: app.on_setting_screen()
