@@ -13,7 +13,7 @@ ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTA2NzIzOTAsIml
 
 async def main():
     """Simple WebSocket client for Home Assistant."""
-    websocket = await asyncws.connect('ws://192.168.199.135:8123/api/websocket')
+    websocket = await asyncws.connect('ws://guoxi.mynatapp.cc/api/websocket')
 
     await websocket.send(json.dumps(
         {'type': 'auth',
@@ -21,17 +21,27 @@ async def main():
     ))
 
     await websocket.send(json.dumps(
-        {'id': 1, 'type': 'get_states'}
+        {'id': 1, 'type': 'subscribe_events', 'event_type': 'state_changed'}
+    ))
+
+    await websocket.send(json.dumps(
+        {'id': 2, 'type': 'get_states'}
     ))
 
     while True:
         message = await websocket.recv()
+        print(message)
         if message is None:
             break
-        print(message)
-
-        if json.loads(message)['type'] == 'result':
-            break
+        text = json.loads(message)
+        if text['type'] == 'event':
+            if text['event']['data']['entity_id'] == 'group.bedroom_light_switch':
+                print(text['event']['data']['new_state']['state'])
+        elif text['type'] == 'result':
+            if text['id'] == 2:
+                for state in text['result']:
+                    print(state['entity_id'])
+                    print(state['state'])
 
 now = lambda: time.time()
 start = now()
