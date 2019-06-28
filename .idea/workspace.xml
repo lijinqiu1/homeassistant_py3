@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e179f2d9-d415-4164-a35d-f62e928a9c16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/icons/easy/background_3x9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/easy/background_4x8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/easy/background_7x2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/easy/background_hy1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/easy/background_hy2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/main/background_3x9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/main/background_4x8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/main/background_7x2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/main/background_hy1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/icons/main/background_hy2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/homeassistant_py3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/homeassistant_py3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/screens/easy.kv" beforeDir="false" afterPath="$PROJECT_DIR$/data/screens/easy.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/screens/main.kv" beforeDir="false" afterPath="$PROJECT_DIR$/data/screens/main.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easy.py" beforeDir="false" afterPath="$PROJECT_DIR$/easy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeassistantapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeassistantapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profession.py" beforeDir="false" afterPath="$PROJECT_DIR$/profession.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocketAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/websocketAPI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,63 +24,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-579701821">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="16" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="6" />
-          <entry key="project.open.time.4" value="8" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="kv" value="12" />
-          <entry key="py" value="44" />
-          <entry key="spec" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Kivy" value="12" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="44" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="kv" value="4" />
-          <entry key="py" value="2344" />
-          <entry key="spec" value="36" />
-          <entry key="txt" value="54" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Kivy" value="4" />
-          <entry key="PLAIN_TEXT" value="90" />
-          <entry key="Python" value="2344" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeassistantapp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6575">
+            <state relative-caret-position="4997">
               <caret line="263" column="31" selection-start-line="263" selection-start-column="31" selection-end-line="263" selection-end-column="31" />
               <folding>
                 <element signature="e#9234#13357#0" />
                 <element signature="e#13396#17761#0" />
-                <marker date="1560560180502" expanded="true" signature="3944:3949" ph="..." />
-                <marker date="1560560180502" expanded="true" signature="6373:6386" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profession.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
+            <state relative-caret-position="1520">
               <caret line="113" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="e#2693#2754#0" />
@@ -95,20 +56,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/websocketAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="199" />
+            <state relative-caret-position="494">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RsetAPI.py">
+        <entry file="file://$PROJECT_DIR$/data/screens/main.kv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7225">
-              <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
+            <state relative-caret-position="95">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/screens/easy.kv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1899">
+              <caret line="171" column="30" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -164,26 +134,28 @@
         <option value="$PROJECT_DIR$/exe/test.spec" />
         <option value="$PROJECT_DIR$/homeassistantapp.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/data/screens/main.kv" />
         <option value="$PROJECT_DIR$/easy.py" />
         <option value="$PROJECT_DIR$/profession.py" />
         <option value="$PROJECT_DIR$/websocketAPI.py" />
+        <option value="$PROJECT_DIR$/data/screens/main.kv" />
+        <option value="$PROJECT_DIR$/data/screens/easy.kv" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1230" />
     <option name="height" value="660" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,18 +174,37 @@
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="homeassistant_py3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="homeassistant_py3" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+              <item name="easy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="homeassistant_py3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="homeassistant_py3" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homeassistant/data/screens/setting.kv" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="RSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\homeassistant_py3\data\icons\easy" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\homeassistant_py3\data\icons\easy" />
+      <recent name="D:\workspace\homeassistant_py3\data\icons\main" />
       <recent name="F:\workspace\PythonPrj\homeassistant_py3\data\screens" />
       <recent name="F:\workspace\PythonPrj\homeassistant_py3" />
     </key>
@@ -230,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.websocketAPI">
+  <component name="RunManager" selected="Python.homeassistantapp">
     <configuration name="aioRsetAPI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="homeassistant_py3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -345,8 +336,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.websocketAPI" />
         <item itemvalue="Python.homeassistantapp" />
+        <item itemvalue="Python.websocketAPI" />
         <item itemvalue="Python.homeassistant" />
         <item itemvalue="Python.kivy_asyncio_example" />
         <item itemvalue="Python.aioRsetAPI" />
@@ -389,22 +380,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6284875" visible="true" weight="0.08176944" />
-      <window_info id="Structure" order="1" sideWeight="0.37151247" side_tool="true" visible="true" weight="0.08176944" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6233766" visible="true" weight="0.22788204" />
+      <window_info id="Structure" order="1" sideWeight="0.37662336" side_tool="true" visible="true" weight="0.22788204" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49029127" weight="0.17056856" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49029127" weight="0.3796034" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49573562" weight="0.2575251" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919093" weight="0.30439952" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5008091" side_tool="true" weight="0.34601665" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5008091" side_tool="true" visible="true" weight="0.34560907" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -412,9 +402,6 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -457,13 +444,6 @@
     <entry file="file://$PROJECT_DIR$/data/screens/setting.kv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/screens/easy.kv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aioRsetAPI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -471,13 +451,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37-32/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20525">
-          <caret line="828" column="8" selection-start-line="828" selection-start-column="8" selection-end-line="828" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Python37-32/Lib/threading.py" />
     <entry file="file://$PROJECT_DIR$/data/screens/profession.kv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -485,13 +459,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37-32/Lib/asyncio/events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Python37-32/Lib/asyncio/events.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1625">
@@ -506,34 +474,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python37-32/Lib/site-packages/kivy/clock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9300">
-          <caret line="381" column="35" selection-start-line="381" selection-start-column="35" selection-end-line="381" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python37-32/Lib/asyncio/base_events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13125">
-          <caret line="539" selection-start-line="539" selection-end-line="539" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python37-32/Lib/site-packages/kivy/context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/screens/main.kv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Python37-32/Lib/site-packages/kivy/clock.py" />
+    <entry file="file://C:/Python37-32/Lib/asyncio/base_events.py" />
+    <entry file="file://C:/Python37-32/Lib/site-packages/kivy/context.py" />
     <entry file="file://$PROJECT_DIR$/exe/test.spec">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -541,22 +484,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RsetAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5491">
+          <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/icons/main/background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/icons/easy/background_4x8.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/icons/easy/background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/icons/easy/mode_background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/icons/easy/cover_background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/homeassistantapp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6575">
+        <state relative-caret-position="4997">
           <caret line="263" column="31" selection-start-line="263" selection-start-column="31" selection-end-line="263" selection-end-column="31" />
           <folding>
             <element signature="e#9234#13357#0" />
             <element signature="e#13396#17761#0" />
-            <marker date="1560560180502" expanded="true" signature="3944:3949" ph="..." />
-            <marker date="1560560180502" expanded="true" signature="6373:6386" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profession.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
+        <state relative-caret-position="1520">
           <caret line="113" selection-start-line="113" selection-end-line="113" />
           <folding>
             <element signature="e#2693#2754#0" />
@@ -569,17 +532,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RsetAPI.py">
+    <entry file="file://$PROJECT_DIR$/websocketAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7225">
-          <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
+        <state relative-caret-position="494">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/websocketAPI.py">
+    <entry file="file://$PROJECT_DIR$/data/screens/main.kv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="199" />
+        <state relative-caret-position="95">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/screens/easy.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1899">
+          <caret line="171" column="30" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
         </state>
       </provider>
     </entry>
