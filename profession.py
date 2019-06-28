@@ -20,9 +20,9 @@ class ProfessionFloatLayout(FloatLayout):
         super(ProfessionFloatLayout, self).__init__(**kwargs)
         self.api = RsetAPI()
         self.profession_current_type = 1
-        self.profession_air_switch = 0
-        self.profession_canopy_switch = 0
-        self.profession_floor_heating_switch = 0
+        self.profession_air_switch = 'off'
+        self.profession_canopy_switch = 'off'
+        self.profession_floor_heating_switch = 'off'
         self.profession_climate_switch = 0
         self.profession_climate_mode = 'None'
         self.profession_climate_temp = 25
@@ -44,7 +44,6 @@ class ProfessionFloatLayout(FloatLayout):
         self.ids.environment_button.background_down = "data/icons/profession/environment_h.jpg"
 
         self.api = RsetAPI()
-
         Clock.schedule_interval(self._update_clock, 1.)
         # Clock.schedule_interval(self._update_state, 2.)
 
@@ -53,36 +52,171 @@ class ProfessionFloatLayout(FloatLayout):
 
     def set_environment_canopy_switch(self, canopy):
         self.profession_canopy_switch = canopy
+        # self.update_canopy_screen()
 
     def set_environment_floor_heating_switch(self, floor_heating):
         self.profession_floor_heating_switch = floor_heating
+        # self.update_floor_heat_screen()
 
     def set_climate_mode_state(self, mode):
         self.profession_climate_mode = mode
+        # if self.ids.sm_profession.current == 'environment_climate':
+            # self.update_climate_screen()
 
     def set_climate_temp_state(self, temp):
         self.profession_climate_temp = temp
+        # if self.ids.sm_profession.current == 'environment_climate':
+        #     if self.profession_climate_mode == 'False':
+        #         return
+        #     if temp == 18:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/18.jpg'
+        #     elif temp == 19:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/19.jpg'
+        #     elif temp == 20:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/20.jpg'
+        #     elif temp == 21:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/21.jpg'
+        #     elif temp == 22:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/22.jpg'
+        #     elif temp == 23:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/23.jpg'
+        #     elif temp == 24:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/24.jpg'
+        #     elif temp == 25:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/25.jpg'
+        #     elif temp == 26:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/26.jpg'
+        #     elif temp == 27:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/27.jpg'
+        #     elif temp == 28:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/28.jpg'
+        #     elif temp == 29:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/29.jpg'
+        #     elif temp == 30:
+        #         self.ids.cliamate_temp_number.source = 'data/icons/profession/temp/30.jpg'
 
     def set_bedroom_lights_state(self, switch):
         self.profession_lights_bedroom['switch'] = switch
+        # if self.ids.sm_profession.current == 'lights_bedroom':
+        #     self.update_bedroom_light()
 
     def set_livingroom_lights_state(self, switch):
         self.profession_lights_livingroom['switch'] = switch
+        # self.update_livingroom_light()
 
     def set_vestibule_lights_state(self, switch):
         self.profession_lights_vestibule['switch'] = switch
+        # self.update_vestibule_light()
 
     def set_bashroom_lights_state(self, switch):
         self.profession_lights_bashroom['switch'] = switch
+        # self.update_bashroom_light()
 
     def set_atmosphere_bedroom_switch(self, switch):
         self.profession_atmosphere_bedroom['switch'] = switch
+        # self.update_atmosphere_bedroom()
 
     def set_atmosphere_bedroom_color(self, color):
         self.profession_atmosphere_bedroom['color'] = color
+        # if self.profession_atmosphere_bedroom['switch'] == 'on':
+        #     current_color = self.profession_atmosphere_bedroom['color']
+        #     self.ids.atmosphere_bedroom_color_1_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_1.jpg"
+        #     self.ids.atmosphere_bedroom_color_1_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_1.jpg"
+        #     self.ids.atmosphere_bedroom_color_2_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_2.jpg"
+        #     self.ids.atmosphere_bedroom_color_2_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_2.jpg"
+        #     self.ids.atmosphere_bedroom_color_3_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_3.jpg"
+        #     self.ids.atmosphere_bedroom_color_3_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_3.jpg"
+        #     self.ids.atmosphere_bedroom_color_4_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_4.jpg"
+        #     self.ids.atmosphere_bedroom_color_4_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_4.jpg"
+        #     self.ids.atmosphere_bedroom_color_5_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_5.jpg"
+        #     self.ids.atmosphere_bedroom_color_5_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_5.jpg"
+        #
+        #     if current_color == 'WHITE':
+        #         self.ids.atmosphere_bedroom_color_1_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_1_on.jpg"
+        #         self.ids.atmosphere_bedroom_color_1_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_1_on.jpg"
+        #     elif current_color == 'YELLOW':
+        #         self.ids.atmosphere_bedroom_color_2_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_2_on.jpg"
+        #         self.ids.atmosphere_bedroom_color_2_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_2_on.jpg"
+        #     elif current_color == 'PINK':
+        #         self.ids.atmosphere_bedroom_color_3_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_3_on.jpg"
+        #         self.ids.atmosphere_bedroom_color_3_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_3_on.jpg"
+        #     elif current_color == 'BLUE':
+        #         self.ids.atmosphere_bedroom_color_4_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_4_on.jpg"
+        #         self.ids.atmosphere_bedroom_color_4_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_4_on.jpg"
+        #     elif current_color == 'GREEN':
+        #         self.ids.atmosphere_bedroom_color_5_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_5_on.jpg"
+        #         self.ids.atmosphere_bedroom_color_5_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_5_on.jpg"
 
     def set_atmosphere_bedroom_level(self, level):
         self.profession_atmosphere_bedroom['level'] = level
+        # if self.profession_atmosphere_bedroom['switch'] == 'on':
+        #     current_level = self.profession_atmosphere_bedroom['level']
+        #     self.ids.atmosphere_bedroom_level_1_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_1_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_2_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_2_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_3_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_3_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_4_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_4_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_5_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bedroom_level_5_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #
+        #     if current_level == 'LEVEL_ONE':
+        #         self.ids.atmosphere_bedroom_level_1_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bedroom_level_1_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_TWO':
+        #         self.ids.atmosphere_bedroom_level_2_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bedroom_level_2_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_THREE':
+        #         self.ids.atmosphere_bedroom_level_3_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bedroom_level_3_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_FOUR':
+        #         self.ids.atmosphere_bedroom_level_4_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bedroom_level_4_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_FIVE':
+        #         self.ids.atmosphere_bedroom_level_5_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bedroom_level_5_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
 
     def set_atmosphere_livingroom_switch(self, switch):
         self.profession_atmosphere_livingroom['switch'] = switch
@@ -104,12 +238,109 @@ class ProfessionFloatLayout(FloatLayout):
 
     def set_atmosphere_bashroom_switch(self, switch):
         self.profession_atmosphere_bashroom['switch'] = switch
+        # self.update_atmosphere_bashroom()
 
     def set_atmosphere_bashroom_color(self, color):
         self.profession_atmosphere_bashroom['color'] = color
+        # if self.profession_atmosphere_bashroom['switch'] == 'on':
+        #     current_color = self.profession_atmosphere_bashroom['color']
+        #     self.ids.atmosphere_bashroom_color_1_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_1.jpg"
+        #     self.ids.atmosphere_bashroom_color_1_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_1.jpg"
+        #     self.ids.atmosphere_bashroom_color_2_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_2.jpg"
+        #     self.ids.atmosphere_bashroom_color_2_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_2.jpg"
+        #     self.ids.atmosphere_bashroom_color_3_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_3.jpg"
+        #     self.ids.atmosphere_bashroom_color_3_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_3.jpg"
+        #     self.ids.atmosphere_bashroom_color_4_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_4.jpg"
+        #     self.ids.atmosphere_bashroom_color_4_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_4.jpg"
+        #     self.ids.atmosphere_bashroom_color_5_button.background_normal = \
+        #         "data/icons/profession/atmosphere/color_5.jpg"
+        #     self.ids.atmosphere_bashroom_color_5_button.background_down = \
+        #         "data/icons/profession/atmosphere/color_5.jpg"
+        #
+        #     if current_color == 'WHITE':
+        #         self.ids.atmosphere_bashroom_color_1_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_1_on.jpg"
+        #         self.ids.atmosphere_bashroom_color_1_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_1_on.jpg"
+        #     elif current_color == 'YELLOW':
+        #         self.ids.atmosphere_bashroom_color_2_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_2_on.jpg"
+        #         self.ids.atmosphere_bashroom_color_2_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_2_on.jpg"
+        #     elif current_color == 'PINK':
+        #         self.ids.atmosphere_bashroom_color_3_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_3_on.jpg"
+        #         self.ids.atmosphere_bashroom_color_3_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_3_on.jpg"
+        #     elif current_color == 'BLUE':
+        #         self.ids.atmosphere_bashroom_color_4_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_4_on.jpg"
+        #         self.ids.atmosphere_bashroom_color_4_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_4_on.jpg"
+        #     elif current_color == 'GREEN':
+        #         self.ids.atmosphere_bashroom_color_5_button.background_normal = \
+        #             "data/icons/profession/atmosphere/color_5_on.jpg"
+        #         self.ids.atmosphere_bashroom_color_5_button.background_down = \
+        #             "data/icons/profession/atmosphere/color_5_on.jpg"
 
     def set_atmosphere_bashroom_level(self, level):
         self.profession_atmosphere_bashroom['level'] = level
+        # if self.profession_atmosphere_bashroom['switch'] == 'on':
+        #     current_level = self.profession_atmosphere_bashroom['level']
+        #     self.ids.atmosphere_bashroom_level_1_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_1_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_2_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_2_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_3_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_3_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_4_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_4_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_5_button.background_normal = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #     self.ids.atmosphere_bashroom_level_5_button.background_down = \
+        #         "data/icons/profession/atmosphere/switch.jpg"
+        #
+        #     if current_level == 'LEVEL_ONE':
+        #         self.ids.atmosphere_bashroom_level_1_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bashroom_level_1_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_TWO':
+        #         self.ids.atmosphere_bashroom_level_2_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bashroom_level_2_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_THREE':
+        #         self.ids.atmosphere_bashroom_level_3_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bashroom_level_3_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_FOUR':
+        #         self.ids.atmosphere_bashroom_level_4_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bashroom_level_4_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #     elif current_level == 'LEVEL_FIVE':
+        #         self.ids.atmosphere_bashroom_level_5_button.background_normal = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
+        #         self.ids.atmosphere_bashroom_level_5_button.background_down = \
+        #             "data/icons/profession/atmosphere/switch_h.jpg"
 
     def set_cover_left(self, postion):
         self.profession_cover_left['postion'] = postion
@@ -281,7 +512,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_floor_heat_screen(self):
         if self.profession_floor_heating_switch == 'on':
-            # self.ids.floor_heating_FloatLayout.canvas.before.clear()
+            self.ids.floor_heating_FloatLayout.canvas.before.clear()
             with self.ids.floor_heating_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/floor_heating/background_on.jpg')
@@ -308,7 +539,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.floor_heating_level_5_button.background_down = \
                 "data/icons/profession/floor_heating/switch.jpg"
         elif self.profession_floor_heating_switch == 'off':
-            # self.ids.floor_heating_FloatLayout.canvas.before.clear()
+            self.ids.floor_heating_FloatLayout.canvas.before.clear()
             with self.ids.floor_heating_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/floor_heating/background_off.jpg')
@@ -337,14 +568,14 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_canopy_screen(self):
         if self.profession_canopy_switch == 'on':
-            # self.ids.canopy_FloatLayout.canvas.before.clear()
+            self.ids.canopy_FloatLayout.canvas.before.clear()
             with self.ids.canopy_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/canopy/background_on.png')
             self.ids.canopy_switch_button.background_normal = "data/icons/profession/canopy/on.png"
             self.ids.canopy_switch_button.background_down = "data/icons/profession/canopy/on.png"
         elif self.profession_canopy_switch == 'off':
-            # self.ids.canopy_FloatLayout.canvas.before.clear()
+            self.ids.canopy_FloatLayout.canvas.before.clear()
             self.ids.canopy_switch_button.background_normal = "data/icons/profession/canopy/off.png"
             self.ids.canopy_switch_button.background_down = "data/icons/profession/canopy/off.png"
             with self.ids.canopy_FloatLayout.canvas.before:
@@ -353,7 +584,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_bedroom_light(self):
         if self.profession_lights_bedroom['switch'] == 'on':
-            # self.ids.lights_bedroom_FloatLayout.canvas.before.clear()
+            self.ids.lights_bedroom_FloatLayout.canvas.before.clear()
             with self.ids.lights_bedroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.58684),
                           pos=(self.width * 0.15, self.height * 0.0815789),
@@ -381,7 +612,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.lights_bedroom_level_5_button.background_down = \
                 "data/icons/profession/lights/switch.jpg"
         elif self.profession_lights_bedroom['switch'] == 'off':
-                # self.ids.lights_bedroom_FloatLayout.canvas.before.clear()
+                self.ids.lights_bedroom_FloatLayout.canvas.before.clear()
                 with self.ids.lights_bedroom_FloatLayout.canvas.before:
                     Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                               source='data/icons/profession/lights/bedroom_background_off.jpg')
@@ -410,7 +641,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_livingroom_light(self):
         if self.profession_lights_livingroom['switch'] == 'on':
-            # self.ids.lights_livingroom_FloatLayout.canvas.before.clear()
+            self.ids.lights_livingroom_FloatLayout.canvas.before.clear()
             with self.ids.lights_livingroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.58684),
                           pos=(self.width * 0.15, self.height * 0.0815789),
@@ -438,7 +669,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.lights_livingroom_level_5_button.background_down = \
                 "data/icons/profession/lights/switch.jpg"
         elif self.profession_lights_livingroom['switch'] == 'off':
-            # self.ids.lights_livingroom_FloatLayout.canvas.before.clear()
+            self.ids.lights_livingroom_FloatLayout.canvas.before.clear()
             with self.ids.lights_livingroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/lights/livingroom_background_off.jpg')
@@ -467,7 +698,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_vestibule_light(self):
         if self.profession_lights_vestibule['switch'] == 'on':
-            # self.ids.lights_vestibule_FloatLayout.canvas.before.clear()
+            self.ids.lights_vestibule_FloatLayout.canvas.before.clear()
             with self.ids.lights_vestibule_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.58684),
                           pos=(self.width * 0.15, self.height * 0.0815789),
@@ -495,7 +726,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.lights_vestibule_level_5_button.background_down = \
                 "data/icons/profession/lights/switch.jpg"
         elif self.profession_lights_vestibule['switch'] == 'off':
-                # self.ids.lights_vestibule_FloatLayout.canvas.before.clear()
+                self.ids.lights_vestibule_FloatLayout.canvas.before.clear()
                 with self.ids.lights_vestibule_FloatLayout.canvas.before:
                     Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                               source='data/icons/profession/lights/vestibule_background_off.jpg')
@@ -524,7 +755,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_bashroom_light(self):
         if self.profession_lights_bashroom['switch'] == 'on':
-            # self.ids.lights_bashroom_FloatLayout.canvas.before.clear()
+            self.ids.lights_bashroom_FloatLayout.canvas.before.clear()
             with self.ids.lights_bashroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.58684),
                           pos=(self.width * 0.15, self.height * 0.0815789),
@@ -552,7 +783,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.lights_bashroom_level_5_button.background_down = \
                 "data/icons/profession/lights/switch.jpg"
         elif self.profession_lights_bashroom['switch'] == 'off':
-                # self.ids.lights_bashroom_FloatLayout.canvas.before.clear()
+                self.ids.lights_bashroom_FloatLayout.canvas.before.clear()
                 with self.ids.lights_bashroom_FloatLayout.canvas.before:
                     Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                               source='data/icons/profession/lights/bashroom_background_off.jpg')
@@ -581,7 +812,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_atmosphere_bedroom(self):
         if self.profession_atmosphere_bedroom['switch'] == 'on':
-            # self.ids.atmosphere_bedroom_FloatLayout.canvas.before.clear()
+            self.ids.atmosphere_bedroom_FloatLayout.canvas.before.clear()
             with self.ids.atmosphere_bedroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),
@@ -684,7 +915,7 @@ class ProfessionFloatLayout(FloatLayout):
                 self.ids.atmosphere_bedroom_level_5_button.background_down = \
                     "data/icons/profession/atmosphere/switch_h.jpg"
         elif self.profession_atmosphere_bedroom['switch'] == 'off':
-            # self.ids.atmosphere_bedroom_FloatLayout.canvas.before.clear()
+            self.ids.atmosphere_bedroom_FloatLayout.canvas.before.clear()
             with self.ids.atmosphere_bedroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),
@@ -735,7 +966,7 @@ class ProfessionFloatLayout(FloatLayout):
 
     def update_atmosphere_bashroom(self):
         if self.profession_atmosphere_bashroom['switch'] == 'on':
-            # self.ids.atmosphere_bashroom_FloatLayout.canvas.before.clear()
+            self.ids.atmosphere_bashroom_FloatLayout.canvas.before.clear()
             with self.ids.atmosphere_bashroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),
@@ -843,7 +1074,7 @@ class ProfessionFloatLayout(FloatLayout):
                 self.ids.atmosphere_bashroom_level_5_button.background_down = \
                     "data/icons/profession/atmosphere/switch_h.jpg"
         elif self.profession_atmosphere_bashroom['switch'] == 'off':
-            # self.ids.atmosphere_bashroom_FloatLayout.canvas.before.clear()
+            self.ids.atmosphere_bashroom_FloatLayout.canvas.before.clear()
             with self.ids.atmosphere_bashroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),
@@ -1309,7 +1540,7 @@ class ProfessionFloatLayout(FloatLayout):
     #新风快关
     def on_air_switch_selected(self):
         if self.profession_air_switch == 0:
-            # self.ids.air_FloatLayout.canvas.before.clear()
+            self.ids.air_FloatLayout.canvas.before.clear()
             with self.ids.air_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/air/background_on.jpg')
@@ -1317,7 +1548,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.ids.air_switch_button.background_down = "data/icons/profession/air/on.png"
             self.profession_air_switch = 1
         else:
-            # self.ids.air_FloatLayout.canvas.before.clear()
+            self.ids.air_FloatLayout.canvas.before.clear()
             with self.ids.air_FloatLayout.canvas.before:
                 Rectangle(size=(self.width*0.7, self.height*0.58684), pos=(self.width*0.15, self.height*0.0815789),
                           source='data/icons/profession/air/background_off.jpg')
@@ -1396,7 +1627,7 @@ class ProfessionFloatLayout(FloatLayout):
         else:
             self.profession_climate_switch = 'off'
             self.api.set_ac_mode('False')
-            self.profession_climate_mode = 'None'
+            # self.profession_climate_mode = 'None'
 
     #空调模式选择
     def on_climate_mode_selected(self, *args):
@@ -1679,7 +1910,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.profession_atmosphere_livingroom['switch'] = 'on'
             self.ids.atmosphere_livingroom_switch_button.background_normal = "data/icons/profession/atmosphere/on.jpg"
             self.ids.atmosphere_livingroom_switch_button.background_down = "data/icons/profession/atmosphere/on.jpg"
-            # self.ids.atmosphere_livingroom_switch_button.canvas.before.clear()
+            self.ids.atmosphere_livingroom_switch_button.canvas.before.clear()
             with self.ids.atmosphere_livingroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),
@@ -1729,7 +1960,7 @@ class ProfessionFloatLayout(FloatLayout):
             self.profession_atmosphere_livingroom['switch'] = 'off'
             self.ids.atmosphere_livingroom_switch_button.background_normal = "data/icons/profession/atmosphere/off.jpg"
             self.ids.atmosphere_livingroom_switch_button.background_down = "data/icons/profession/atmosphere/off.jpg"
-            # self.ids.atmosphere_livingroom_FloatLayout.canvas.before.clear()
+            self.ids.atmosphere_livingroom_FloatLayout.canvas.before.clear()
             with self.ids.atmosphere_livingroom_FloatLayout.canvas.before:
                 Rectangle(size=(self.width * 0.7, self.height * 0.74473684210526315789473684210526),
                           pos=(self.width * 0.15, self.height * 0.02894736842105263157894736842105),

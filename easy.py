@@ -28,7 +28,7 @@ class EasyFloatLayout(FloatLayout):
         self.ids.button_cover_open.background_normal = 'data/icons/easy/selected.jpg'
         self.ids.button_cover_open.background_down = 'data/icons/easy/selected.jpg'
 
-        Clock.schedule_interval(self._update_clock, 10.)
+        Clock.schedule_interval(self._update_clock, 1.)
         self.temp = 25
         self.hum_level = 'COMFORTABLE'
         self.hum = 0
@@ -71,17 +71,17 @@ class EasyFloatLayout(FloatLayout):
             self.ids.easy_label_hum.font_name = adobehtr
             self.ids.easy_label_hum.text = '[color=#6E6E6E]' + '干燥' + '[/color]'
         if self.pm2_5_level == 'FINE':
-            self.ids.easy_label_hum.font_name = adobehtr
-            self.ids.easy_label_hum.text = '[color=#6E6E6E]' + '优' + '[/color]'
+            self.ids.easy_label_pm.font_name = adobehtr
+            self.ids.easy_label_pm.text = '[color=#6E6E6E]' + '优' + '[/color]'
         elif self.pm2_5_level == 'GOOD':
-            self.ids.easy_label_hum.font_name = adobehtr
-            self.ids.easy_label_hum.text = '[color=#6E6E6E]' + '良' + '[/color]'
+            self.ids.easy_label_pm.font_name = adobehtr
+            self.ids.easy_label_pm.text = '[color=#6E6E6E]' + '良' + '[/color]'
         elif self.pm2_5_level == 'NORMAL':
-            self.ids.easy_label_hum.font_name = adobehtr
-            self.ids.easy_label_hum.text = '[color=#6E6E6E]' + '一般' + '[/color]'
+            self.ids.easy_label_pm.font_name = adobehtr
+            self.ids.easy_label_pm.text = '[color=#6E6E6E]' + '一般' + '[/color]'
         elif self.pm2_5_level == 'BAD':
-            self.ids.easy_label_hum.font_name = adobehtr
-            self.ids.easy_label_hum.text = '[color=#6E6E6E]' + '恶劣' + '[/color]'
+            self.ids.easy_label_pm.font_name = adobehtr
+            self.ids.easy_label_pm.text = '[color=#6E6E6E]' + '恶劣' + '[/color]'
 
 
     def on_main_screen(self):

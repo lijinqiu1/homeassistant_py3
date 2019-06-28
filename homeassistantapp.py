@@ -225,10 +225,10 @@ class Homeassistant(App):
         if self.door_state == 'close':
             self.root.ids.door_control.background_normal = "data/icons/door/opening.jpg"
             self.root.ids.door_control.background_down = "data/icons/door/opening.jpg"
-            self.api.set_switch_off(self.men_xi)
+            self.api.set_switch_on(self.men_xi)
             self.door_state = 'opening'
         elif self.door_state == 'opened':
-            self.api.set_switch_on(self.men_xi)
+            self.api.set_switch_off(self.men_xi)
             self.door_state = 'close'
 
     def _update_state(self, dt):
@@ -316,14 +316,14 @@ class Homeassistant(App):
             elif state['entity_id'] == 'switch.men_xi':
                 self.men_xi_state = state['state']
                 if self.men_xi_state == 'on':
-                    if self.door_state == 'opened':
-                        self.door_state = 'close'
-                        self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
-                        self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
+                    if self.door_state == 'opening':
+                        self.door_state = 'opened'
+                        self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
+                        self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
                 elif self.men_xi_state == 'off':
-                    self.door_state = 'opened'
-                    self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
-                    self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
+                    self.door_state = 'close'
+                    self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
+                    self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
 
     def get_all_state(self):
         for state in self.states:
@@ -380,14 +380,14 @@ class Homeassistant(App):
                 elif state['entity_id'] == 'switch.men_xi':
                     self.men_xi_state = state['state']
                     if self.men_xi_state == 'on':
-                        if self.door_state == 'opened':
-                            self.door_state = 'close'
-                            self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
-                            self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
+                        if self.door_state == 'opening':
+                            self.door_state = 'opened'
+                            self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
+                            self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
                     elif self.men_xi_state == 'off':
-                        self.door_state = 'opened'
-                        self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
-                        self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
+                        self.door_state = 'close'
+                        self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
+                        self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
 
     def get_all_state_ws(self, text):
         if text['type'] == 'event':
@@ -411,6 +411,7 @@ class Homeassistant(App):
                 self.profession.set_environment_floor_heating_switch(state['new_state']['state'])
             elif state['entity_id'] == 'input_select.ac_setting':
                 self.profession.set_climate_mode_state(state['new_state']['state'])
+                print(state['new_state']['state'])
             elif state['entity_id'] == 'input_select.air_conditioner_temp':
                 self.profession.set_climate_temp_state(state['new_state']['state'])
             elif state['entity_id'] == 'group.bedroom_light_switch':
@@ -444,14 +445,14 @@ class Homeassistant(App):
             elif state['entity_id'] == 'switch.men_xi':
                 self.men_xi_state = state['new_state']['state']
                 if self.men_xi_state == 'on':
-                    if self.door_state == 'opened':
-                        self.door_state = 'close'
-                        self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
-                        self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
+                    if self.door_state == 'opening':
+                        self.door_state = 'opened'
+                        self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
+                        self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
                 elif self.men_xi_state == 'off':
-                    self.door_state = 'opened'
-                    self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
-                    self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
+                    self.door_state = 'close'
+                    self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
+                    self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
         elif text['type'] == 'result':
             if text['id'] == 2:
                 for state in text['result']:
@@ -508,14 +509,14 @@ class Homeassistant(App):
                         elif state['entity_id'] == 'switch.men_xi':
                             self.men_xi_state = state['state']
                             if self.men_xi_state == 'on':
-                                if self.door_state == 'opened':
-                                    self.door_state = 'close'
-                                    self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
-                                    self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
+                                if self.door_state == 'opening':
+                                    self.door_state = 'opened'
+                                    self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
+                                    self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
                             elif self.men_xi_state == 'off':
-                                self.door_state = 'opened'
-                                self.root.ids.door_control.background_normal = "data/icons/door/opened.jpg"
-                                self.root.ids.door_control.background_down = "data/icons/door/opened.jpg"
+                                self.door_state = 'close'
+                                self.root.ids.door_control.background_normal = "data/icons/door/open.jpg"
+                                self.root.ids.door_control.background_down = "data/icons/door/open.jpg"
 
 
 if __name__ == '__main__':

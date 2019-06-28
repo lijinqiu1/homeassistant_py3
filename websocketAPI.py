@@ -8,12 +8,12 @@ import json
 import time
 import asyncws
 
-ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTA2NzIzOTAsImlzcyI6ImVmYmU5YWFhMWZlYzQ4YTNhOGVkZTNjNTU2YWE4MTU1IiwiZXhwIjoxODY2MDMyMzkwfQ.GlA1Qb0LmIWqSvkTSgv_7bUyMxq5IfU1kPR9PBBCb5Y'
-
+# ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NTA2NzIzOTAsImlzcyI6ImVmYmU5YWFhMWZlYzQ4YTNhOGVkZTNjNTU2YWE4MTU1IiwiZXhwIjoxODY2MDMyMzkwfQ.GlA1Qb0LmIWqSvkTSgv_7bUyMxq5IfU1kPR9PBBCb5Y'
+ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NTk4NzUwMDYsImlzcyI6IjE5NTc3ZmU2YjY3YTRiMjZiODhhODMzZjQ4MzE0YWNmIiwiZXhwIjoxODc1MjM1MDA2fQ.bnEpgZcVIqwBWW-0mltkqr2ujZMG7N_YraPYdA_dCYA'
 
 async def main():
     """Simple WebSocket client for Home Assistant."""
-    websocket = await asyncws.connect('ws://guoxi.mynatapp.cc/api/websocket')
+    websocket = await asyncws.connect('ws://guoxi3.natapp4.cc/api/websocket')
 
     await websocket.send(json.dumps(
         {'type': 'auth',
@@ -35,7 +35,7 @@ async def main():
             break
         text = json.loads(message)
         if text['type'] == 'event':
-            if text['event']['data']['entity_id'] == 'group.bedroom_light_switch':
+            if text['event']['data']['entity_id'] == 'switch.men_xi':
                 print(text['event']['data']['new_state']['state'])
         elif text['type'] == 'result':
             if text['id'] == 2:
